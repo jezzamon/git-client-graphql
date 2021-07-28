@@ -1,19 +1,19 @@
-import React from 'react';
+import React from 'react'
 
 type ErrorBoundaryState = {
-  hasError: boolean;
-  errorMessage?: string;
-};
+  hasError: boolean
+  errorMessage?: string
+}
 
 export class ErrorBoundary extends React.Component<{}, ErrorBoundaryState> {
   constructor(props: {}) {
-    super(props);
-    this.state = { hasError: false };
+    super(props)
+    this.state = { hasError: false }
   }
 
   static getDerivedStateFromError(error: Error) {
     // Update state so the next render will show the fallback UI.
-    return { hasError: true, errorMessage: error.message };
+    return { hasError: true, errorMessage: error.message }
   }
 
   render() {
@@ -66,9 +66,9 @@ export class ErrorBoundary extends React.Component<{}, ErrorBoundaryState> {
             />
           </blessed-box>
         </blessed-box>
-      );
+      )
     }
 
-    return this.props.children;
+    return this.props.children
   }
 }

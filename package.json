@@ -4,11 +4,19 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "babel-node --inspect src/index.tsx --extensions \".js,.ts,.jsx,.tsx,\""
+    "start": "babel-node --inspect src/index.tsx --extensions \".js,.ts,.jsx,.tsx,\"",
+    "gql-gen": "graphql-codegen --config codegen.yml"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "prettier": {
+    "semi": false,
+    "singleQuote": true,
+    "trailingComma": "es5",
+    "bracketSpacing": true,
+    "jsxBracketSameLine": false
+  },
   "dependencies": {
     "@apollo/react-hooks": "^4.0.0",
     "@babel/cli": "^7.6.0",
@@ -56,12 +64,18 @@
     "@babel/preset-react": "^7.12.1",
     "@babel/preset-typescript": "^7.12.1",
     "@babel/register": "^7.6.0",
+    "@graphql-codegen/cli": "1.21.7",
     "babel-core": "^7.0.0-bridge.0",
     "babel-jest": "^24.9.0",
     "babel-loader": "^8.0.0",
     "babel-plugin-import": "^1.11.0",
     "babel-plugin-module-resolver": "^4.0.0",
     "babel-plugin-require-context-hook": "^1.0.0",
-    "babel-preset-react-hmre": "^1.1.1"
+    "babel-preset-react-hmre": "^1.1.1",
+    "@graphql-codegen/typescript": "1.23.0",
+    "@graphql-codegen/typescript-operations": "1.18.4",
+    "@graphql-codegen/typescript-react-apollo": "2.3.1",
+    "@graphql-codegen/typescript-graphql-files-modules": "1.18.1",
+    "@graphql-codegen/introspection": "1.18.2"
   }
 }

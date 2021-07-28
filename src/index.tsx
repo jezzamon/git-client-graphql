@@ -1,13 +1,13 @@
-import React from 'react';
-import blessed from 'blessed';
-import { render } from 'react-blessed';
-import * as dotenv from 'dotenv';
-import { App } from './App';
-import { ErrorBoundary } from './ErrorBoundary';
-import { MemoryRouter } from 'react-router';
-import { ClientProvider } from './auth/ClientProvider';
+import React from 'react'
+import blessed from 'blessed'
+import { render } from 'react-blessed'
+import * as dotenv from 'dotenv'
+import { App } from './App'
+import { ErrorBoundary } from './ErrorBoundary'
+import { MemoryRouter } from 'react-router'
+import { ClientProvider } from './auth/ClientProvider'
 
-dotenv.config();
+dotenv.config()
 
 const screen = blessed.screen({
   autoPadding: true,
@@ -20,11 +20,11 @@ const screen = blessed.screen({
     artificial: true,
     blink: true,
   },
-});
+})
 
-screen.key(['q', 'C-c'], () => process.exit(0));
+screen.key(['q', 'C-c'], () => process.exit(0))
 
-const component = render(
+render(
   <ErrorBoundary>
     <MemoryRouter>
       <ClientProvider>
@@ -33,4 +33,4 @@ const component = render(
     </MemoryRouter>
   </ErrorBoundary>,
   screen
-);
+)

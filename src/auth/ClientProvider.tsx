@@ -19,6 +19,7 @@ export const ClientProvider: FC<PropsWithChildren<{}>> = ({ children }) => {
       }
       setToken(key);
     };
+    
     getToken();
   }, []);
 
