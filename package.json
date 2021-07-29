@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "babel-node --inspect src/index.tsx --extensions \".js,.ts,.jsx,.tsx,\"",
-    "gql-gen": "graphql-codegen --config codegen.yml"
+    "gql-gen": "graphql-codegen --config codegen.yml",
+    "gql-gen-types": "apollo codegen:generate --localSchemaFile=schema.docs.graphql --target=typescript --tagName=gql --addTypename --globalTypesFile=src/types/graphql-global-types.ts types"
   },
   "keywords": [],
   "author": "",

@@ -1,15 +1,17 @@
 import React from 'react'
-import { Panel } from '../Panel'
+import { Route, Switch, useRouteMatch } from 'react-router'
+import { PullRequestsMain } from './PullRequestsMain'
+import { ListPullRequests } from './ListPullRequests'
+import { NewPullRequest } from './NewPullRequest'
 
 export const PullRequests = () => {
+  const match = useRouteMatch()
+
   return (
-    <Panel height={10} top="25%" left="center">
-      <blessed-text
-        left="center"
-        bg="white"
-        fg="black"
-        content="Pull Requests" // Use proper text for each page
-      />
-    </Panel>
+    <Switch>
+      <Route exact path={match.path} component={PullRequestsMain} />
+      <Route path={`${match.path}/new`} component={NewPullRequest} />
+      <Route path={`${match.path}/list`} component={ListPullRequests} />
+    </Switch>
   )
 }
